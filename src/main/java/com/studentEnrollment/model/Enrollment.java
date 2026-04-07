@@ -38,7 +38,7 @@ public class Enrollment {
     }
 
     public void setCourseId(int courseId) {
-        this.courseId = courseId;
+        this.courseId= courseId;
     }
 
     public Date getEnrolledDate() {
@@ -55,6 +55,12 @@ public class Enrollment {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String toString(){
+        return "["+id+"] User Id: "+userId
+                +"| Code:"+courseId
+                +"| Enrolled Date"+enrolledDate;
     }
 }
 
