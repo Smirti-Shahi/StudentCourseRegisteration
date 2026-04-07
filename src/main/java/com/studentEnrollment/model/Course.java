@@ -66,4 +66,12 @@ public class Course {
     public void setCreditHour(int creditHour) {
         this.creditHour = creditHour;
     }
+
+    @Override
+    public String toString(){
+        return "["+id+"]"+courseName
+                +"| Code: "+courseCode
+                +"| Instructor: "+intructor
+                +"| Credit Hour: "+creditHour;
+    }
 }

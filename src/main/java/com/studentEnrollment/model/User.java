@@ -62,7 +62,13 @@ public class User {
         this.role = role;
     }
 
+public String toString(){
+        return "["+id+"]"+fullName
+                +"| Email: "+email
+                +"| Role: "+role;
 
+
+}
 
 
 

@@ -57,6 +57,7 @@ public class Enrollment {
         this.id = id;
     }
 
+    @Override
     public String toString(){
         return "["+id+"] User Id: "+userId
                 +"| Code:"+courseId
