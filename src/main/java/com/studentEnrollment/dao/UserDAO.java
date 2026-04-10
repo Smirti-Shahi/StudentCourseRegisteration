@@ -6,6 +6,8 @@ import com.studentEnrollment.util.DbConfig;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
 
@@ -95,6 +97,20 @@ public class UserDAO {
         return null;
     }
 
+    public List<User> getAllStudents(){
+        List<User> students = new ArrayList<>();
+        String sql = "Select * from users where role ='student'";
+        try(Connection conn =DbConfig.getDbConnection();){
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs =ps.executeQuery();
+            while(rs.next()){
+
+            }
+
+        } catch (Exception e) {
+
+        }
+    }
 
 
 }
