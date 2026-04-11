@@ -51,4 +51,28 @@ public class CourseDAO {
         }
         return courses;
     }
+
+    public Course getCourseById(int id){
+        String sql = "select * from courses where id =?";
+        try(Connection conn = DbConfig.getDbConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ){
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Course(
+                        rs.getInt("id"),
+                        rs.getString("course_name"),
+                        rs.getString("course_code"),
+                        rs.getString("instructor"),
+                        rs.getInt("credit_hour")
+                );
+            }
+
+        } catch (Exception e) {
+            System.out.println("error found during fetching course by id: ");
+        }
+        return null;
+    }
 }
