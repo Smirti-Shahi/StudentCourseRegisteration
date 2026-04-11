@@ -104,12 +104,19 @@ public class UserDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs =ps.executeQuery();
             while(rs.next()){
-
+                User user = new User(
+                        rs.getInt("id"),
+                        rs.getString("fullname"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("role")
+                );
             }
 
         } catch (Exception e) {
-
+            System.out.println("error fetching students: "+e.getMessage());
         }
+        return null;
     }
 
 
